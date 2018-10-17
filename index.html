@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    'use strict';
+
+    let money = 52334224;
+    let teleportCost = 6500;
+
+    let moneyFinal = money % teleportCost;
+    let goodsQuantity = (money - moneyFinal) / teleportCost;
+
+    console.log(`Мы можем закупить ${goodsQuantity} единиц товаров, после закупки останется ${moneyFinal} Q`)
+</script>
+</html>
