@@ -85,7 +85,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // Smooth scroll functionality
 
-    let speed = 0.2, //Scroll speed 
+    let speed = 0.5, //Scroll speed 
         links = document.querySelectorAll('a[href^="#"]'); //Elements with links to scrollable sections
 
     for (let i = 0; i < links.length; i++) {
@@ -116,7 +116,7 @@ window.addEventListener('DOMContentLoaded', function() {
                        requestAnimationFrame(step);  
                     }
                     else {
-                        location.hash = elementHash;
+                        location.hash = elementHash; 
                     }
                };
             };
