@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phone input mask</title>
+</head>
+<body>
+    <h1>ШОК!!!</h1>
+    <h1 style="color: red; font-weight: 800;">Выучить Javascript за 21 день проще простого, используя этот старый дедовский способ!!! <br> Достаточно лишь <u><b>2 раза в день</b></u> использовать...</h1>
+    <h1 id="colorChange" >Введи свой номер телефона и узнаешь ответ</h1>
+    
+  
+    <div class="flex">
+        <div class="img-block">
+                <img src="arrow.png" alt="">
+        </div>
+        <div class="input-wrapper">
+            <input type="phone" id="phone">
+        </div>
+        <div class="img-block" style="transform: rotate(180deg);">
+                <img src="arrow.png" alt="">
+        </div>
+    </div>
+    <a href="http://glo.academy/courses/">
+       <button type="button">Прислать смс!</button>
+    </a>
+    
+</body>
+<script src="script.js"></script>
+<style>
+    body {
+        text-align: center;
+    }
+    h1 {
+        font-size: 56px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    input {
+        width: 500px;
+        height: 50px;
+        font-size: 56px;
+        padding: 15px;
+        border: 5px solid #000;
+        margin: 0 40px;
+    }
+    .img-block img {
+        width: 400px;
+        height: 200px;
+    }
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    button {
+        width: 600px;
+        height: 100px;
+        font-size: 66px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: blue;
+        border: 5px solid red;
+    }
+    button:hover {
+        color: red;
+        border-color: blue;
+        background-color: yellow;
+    }
+</style>
+</html>
