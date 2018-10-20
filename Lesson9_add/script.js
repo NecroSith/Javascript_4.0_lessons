@@ -6,10 +6,9 @@ window.addEventListener('DOMContentLoaded', function() {
         var msie = ua.indexOf("MSIE ");
 
         if (msie > 0) { // Check if it is IE
-            console.log('IE detected');
             document.querySelector('.modal').style.cssText = "@keyframes move { \
                 0% {opacity: 0} 100% {opacity: 1;}}\
-                animation: move 5s ease-in;";
+                animation: move 4s ease-in;";
         }
         else {
             var start = Date.now(); // Initial time
