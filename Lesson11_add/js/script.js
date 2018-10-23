@@ -223,4 +223,12 @@ window.addEventListener('DOMContentLoaded', function() {
                 input[i].value = '';
             }
         }
+
+        let phoneField = document.querySelectorAll('input[type="tel"]');
+
+    for (let i = 0; i < phoneField.length; i++) {
+        phoneField[i].addEventListener('input', function() {
+            this.value = this.value.replace (/[^0-9+]/, '');
+        });
+    }
 });
