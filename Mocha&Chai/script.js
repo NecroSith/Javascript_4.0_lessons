@@ -5,7 +5,6 @@ let assert = require('chai').assert,
 function sum(a, b) {
 	return a + b > 10;
 }
-// sum(2,2)
 
 describe("Возвращение типа данных", function() {
     it('Получаем True', function() {
@@ -50,3 +49,11 @@ describe('arr', function() {
         assert.equal(each(arr2, myFunc).length, 5);
     });
 });
+
+module.exports = {
+    sum: sum,
+    num: num,
+    each: each,
+    arr2: arr2,
+    myFunc: myFunc
+}
