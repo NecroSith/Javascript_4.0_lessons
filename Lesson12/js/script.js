@@ -170,9 +170,9 @@ window.addEventListener('DOMContentLoaded', function() {
         }
 
         let message = {
-            loading: '<img src="../img/ajax-loader.gif">',
-            success: '<img src="../img/success.svg">',
-            failure: '<img src="../img/error.svg">'
+            loading: '<img src="/img/ajax-loader.gif">',
+            success: '<img src="/img/success.svg">',
+            failure: '<img src="/img/error.svg">'
         };
 
         let form = document.querySelector('.main-form'),
