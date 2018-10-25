@@ -256,10 +256,20 @@ window.addEventListener('DOMContentLoaded', function() {
             if (item < 1) {
                 slideIndex = slides.length;
             }
-            slides.forEach((slide) => slide.style.display = 'none');
+            slides.forEach((slide) => {
+                slide.style.display = 'none';
+                let value = 100;
+                setInterval(function() {
+                    slide.style.opacity = value - 1;
+                }, 100);
+            });
             dots.forEach((dot) => dot.classList.remove('dot-active'));
 
             slides[slideIndex - 1].style.display = 'block';
+            let value = 0;
+            setInterval(function() {
+                slides[slideIndex - 1].style.opacity = value + 1;
+            }, 100);
             dots[slideIndex - 1].classList.add('dot-active');
         };
 
@@ -309,7 +319,8 @@ window.addEventListener('DOMContentLoaded', function() {
                 totalValue.innerHTML = 0;
             }
             else {
-                totalValue.innerHTML = total;
+                // totalValue.innerHTML = total;
+                scroll(total);
             }
         });
 
@@ -321,7 +332,8 @@ window.addEventListener('DOMContentLoaded', function() {
                 totalValue.innerHTML = 0;
             }
             else {
-                totalValue.innerHTML = total;
+                // totalValue.innerHTML = total;
+                scroll(total);
             }
         })
 
@@ -338,7 +350,22 @@ window.addEventListener('DOMContentLoaded', function() {
             }
             else {
                 let a = total;
-                totalValue.innerHTML = a * this.options[this.selectedIndex].value;
+                let result = a * this.options[this.selectedIndex].value;
+                scroll(result);
             }
         });
+
+        function scroll(value){
+            let i = 0;
+            let interval = setInterval(function() {
+                if (i <= value) {
+                    totalValue.innerHTML = i;
+                    i = i + 600;
+                }
+                else {
+                    clearInterval(interval);
+                    totalValue.innerHTML = value;
+                }
+            },1); 
+        };
 });
