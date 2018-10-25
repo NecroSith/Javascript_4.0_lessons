@@ -1,7 +1,13 @@
 $(document).ready(function () {
     $('.main_btn, .main_btna, a[href="#sheldure"]').on('click', function() {
         $('.overlay').fadeToggle(1000, 'linear');
-        $('.modal').slideDown(1000);
+        $('.modal').animate({
+            opacity: 'toggle',
+            top: '20%'
+        }, {
+            duration: 1000,
+            easing: 'linear'
+        });
     });
     $('.close').on('click', function() {
         $('.overlay').fadeToggle(1000, 'linear');
