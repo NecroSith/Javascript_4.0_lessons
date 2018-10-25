@@ -258,20 +258,27 @@ window.addEventListener('DOMContentLoaded', function() {
             }
             slides.forEach((slide) => {
                 slide.style.display = 'none';
-                let value = 100;
-                setInterval(function() {
-                    slide.style.opacity = value - 1;
-                }, 100);
+                slide.style.opacity = 0.1;
             });
             dots.forEach((dot) => dot.classList.remove('dot-active'));
 
             slides[slideIndex - 1].style.display = 'block';
-            let value = 0;
-            setInterval(function() {
-                slides[slideIndex - 1].style.opacity = value + 1;
-            }, 100);
+            changeOpacity(slides[slideIndex - 1], 0, 1);
+
             dots[slideIndex - 1].classList.add('dot-active');
         };
+
+        function changeOpacity(element, from, to) {
+            let timer = setInterval(function() {
+                if (from >= to) {
+                    clearInterval(timer);
+                }
+                else {
+                    from += 0.1;
+                    element.style.opacity = from;
+                }
+            }, 100);
+        }
 
         function nextSlide(item) {
             showSlides(slideIndex += item);
@@ -281,12 +288,12 @@ window.addEventListener('DOMContentLoaded', function() {
             showSlides(slideIndex = item);
         }
 
-        prev.addEventListener('click', function() {
-            nextSlide(-1);
-        });
-
         next.addEventListener('click', function() {
             nextSlide(1);
+        });
+
+        prev.addEventListener('click', function() {
+            nextSlide(-1);
         });
 
         dotsWrap.addEventListener('click', function(event) {
