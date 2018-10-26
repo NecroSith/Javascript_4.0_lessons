@@ -1,9 +1,10 @@
 function form() {
     let message = {
-        loading: '<img src="/img/ajax-loader.gif">',
-        success: '<img src="/img/success.svg">',
-        failure: '<img src="/img/error.svg">'
+        loading: '<img src="/src/img/ajax-loader.gif">',
+        success: '<img src="/src/img/success.svg">',
+        failure: '<img src="/src/img/error.svg">'
     };
+    
 
     let form = document.querySelector('.main-form'),
         feedbackForm = document.querySelector('.feedback-form'),
@@ -52,6 +53,14 @@ function form() {
                         .then(() => statusIcon.innerHTML = message.success)
                         .catch(() => statusIcon.innerHTML = message.failure)
                         .then(clearInput);
+        });
+    }
+
+    let phoneField = document.querySelectorAll('input[type="tel"]');
+
+    for (let i = 0; i < phoneField.length; i++) {
+        phoneField[i].addEventListener('input', function() {
+            this.value = this.value.replace (/[А-Яа-яеЁA-Za-z]/, '');
         });
     }
 
