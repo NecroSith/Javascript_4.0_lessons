@@ -682,6 +682,9 @@ header ul li:before {
   vertical-align: sub;
   margin: 0 15px;
   position: absolute;
-  top: 208px;
+  top: 173px;
+}
+.feedback-form {
+  position: relative;
 }
 

@@ -1,8 +1,8 @@
 function form() {
     let message = {
-        loading: '<img src="/src/img/ajax-loader.gif">',
-        success: '<img src="/src/img/success.svg">',
-        failure: '<img src="/src/img/error.svg">'
+        loading: '<img src="img/ajax-loader.gif">',
+        success: '<img src="img/success.svg">',
+        failure: '<img src="img/error.svg">'
     };
     
 
